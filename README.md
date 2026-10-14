@@ -97,9 +97,7 @@ Training is not bit-exact across runs or machines. The code does not set `torch.
 - The code uses a CUDA GPU when one is available and falls back to CPU otherwise. AMP is used only on CUDA.
 - Training: batch size 4, patch 64³, Adam with LR 3e-4, `num_workers=4`.
 - GPU used: NVIDIA RTX 5000 Ada Generation, 32 GB
-- CPU / RAM: **TODO**
 - Peak GPU memory during training: about 0.7 GB
-- Cache build (cell 26, 411 cases): **TODO** min (not recorded in the log; cell 26 prints it when it builds the cache)
 - Training per sampler, 200 × 200 = 40,000 iterations at batch size 4 (cell 35): about 20.3 min per run (uniform and tumour)
 - Validation full-volume comparison (cell 38, 73 cases × 2 models): about 55 s
 - Test inference (cell 42): about 0.18 s per case for the sliding window (64³, 50 % overlap); computing the metrics, including HD95, adds about 2 s per case

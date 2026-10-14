@@ -1,0 +1,99 @@
+AI-USE DECLARATION
+ENG 2440 Medical Imaging & AI in Healthcare, Assignment 2
+Student: Mohamed Farrag
+
+Tools used
+----------
+1. Claude (Anthropic), via the Claude desktop app (Cowork). Used as a mentor and
+   reviewer throughout the assignment, in one long conversation.
+   Interaction link: available on request.
+2. Claude Code (Anthropic). Used for repository housekeeping only:
+   environment.yml, .gitignore audit, a README draft, and pushing the repo
+   to GitHub. It was instructed not to open any image, label or cache file
+   and not to change code logic.
+3. Google Search AI summaries (AI Overviews). Used for coding help in many
+   different parts of the notebook code (e.g. how to write or fix specific
+   pieces of code). I did not keep a record of the exact prompts or of which
+   cells were affected, so I cannot list them precisely. I reviewed, adapted
+   and ran all code myself and can explain it.
+
+How Claude was used
+-------------------
+I ran every experiment and wrote the report text. Claude did not write the
+solution code; parts of the code were assisted by Google Search AI summaries
+(item 3 above).
+Claude explained concepts, reviewed my code and outputs, pointed out mistakes,
+and suggested design options that I then chose between and implemented.
+Typical prompts were: "what does this part of the spec mean", "explain X",
+"here is my code/output, is it correct", and "what should the next step be".
+
+Claude also kept a running working log (a document of decisions, results and my
+own explanations) from our conversation, which I used when assembling the report.
+Claude drafted this declaration from that log; I reviewed and confirmed it.
+
+Help by section
+---------------
+General / setup
+- Explained the assignment brief and marking scheme.
+- Explained the DATA_ROOT design and the separation of code, data and outputs.
+- Gave setup guidance (environment, repository layout, .gitignore).
+- Wrote a prompt that I gave to another Claude session to copy my project folder
+  from my laptop to the HPC with rsync (it was told not to read any image file).
+
+Section A (inspection)
+- Concept explanations: NIfTI files, image vs label shapes, segmentation labels,
+  affine matrix, orientation codes, voxel spacing, label values, dataset folders.
+- Feedback on my inspection and visualization code (hardcoded paths, masking the
+  overlay background, channel order from dataset.json, image/label geometry check,
+  display convention, using training cases only).
+- Feedback on my written explanations (e.g. the task is binary whole tumour).
+
+Section B (split)
+- Feedback on my split checks; flagged that an early exploration cell had loaded a
+  test-case label, which I then removed. Suggested deferring test tumour volumes
+  to final evaluation.
+
+Section C (preprocessing)
+- Feedback on my geometry check, interpolation demonstration, normalization,
+  fixed crop/pad and augmentation; suggested checking test images (not labels)
+  against the crop box and passing crop parameters explicitly.
+
+Section D (training)
+- Discussion of design options that I chose between: caching preprocessed cases,
+  patch size (I measured 96^3 vs 64^3 and chose 64^3), U-Net layout, loss, fixed
+  initial weights, training budget, pooled validation Dice, per-worker seeding.
+- Feedback on my training curves and fit diagnosis.
+
+Section E (sampling comparison)
+- Suggested evaluating on full validation volumes (sensitivity, FP volume) and
+  using paired per-case comparisons; feedback on my mechanism and selection text.
+
+Section F (evaluation)
+- Explained sliding-window inference and HD95; suggested choosing the
+  connected-component rule on validation before touching the test set;
+  feedback on my results text and tables.
+
+Section G (error analysis)
+- Feedback on case selection (by Dice), colour choice, my error descriptions and
+  limitations (e.g. citing a source before claiming inter-rater agreement).
+
+Bonus 1 and 2
+- Explained what each bonus asks for; feedback on my results and write-ups.
+
+Report and repository
+- Provided a report structure (section-by-section checklist of required items),
+  reviewed my finished report against the specification, and checked the
+  repository file list for missing items. Claude also uploaded this
+  declaration file to the repository at my request.
+
+Data handling
+-------------
+No MRI volumes, masks or patches were uploaded to Claude. I shared only text
+outputs (shapes, metrics, logs), code, and charts of training curves. On one
+occasion I shared a screenshot of a single augmented FLAIR slice from the public
+MSD dataset by mistake; after that I shared text only.
+
+Responsibility
+--------------
+I am responsible for all code, results and claims in this submission,
+including code written with help from the tools above, and can explain them.

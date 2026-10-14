@@ -1,6 +1,6 @@
 AI-USE DECLARATION
 ENG 2440 Medical Imaging & AI in Healthcare, Assignment 2
-Student: Mohamed Farrag
+Student: Mohamed Farag
 
 Tools used
 ----------

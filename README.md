@@ -132,9 +132,9 @@ The `sec_per_iter` values recorded for each epoch are in `runs/<run>/history.jso
 | Final model | Tumour-aware sampler (`p_tumour = 0.5`), `best.pt` from epoch 168 |
 | Best patch val Dice: uniform / tumour | 0.910 / 0.911 |
 | Full-volume val Dice, 73 cases: uniform / tumour (mean ± SD) | 0.886 ± 0.085 / 0.901 ± 0.057 (paired Wilcoxon p = 0.0001; tumour-aware better in 55/73) |
-| Test Dice (mean ± SD, median) | 0.906 ± 0.056 (0.925) |
+| Test Dice (mean ± SD, median) | 0.906 ± 0.056 (0.924) |
 | Test IoU | 0.832 ± 0.087 (0.860) |
-| Test sensitivity | 0.894 ± 0.073 (0.914) |
+| Test sensitivity | 0.894 ± 0.073 (0.913) |
 | Test HD95 (mm) | 5.72 ± 7.17 (3.00) |
 | Abs. volume error | 8.76 ± 8.13 mL (median 7.13); mean abs. 9.5 % |
 | Empty predictions | 0 |

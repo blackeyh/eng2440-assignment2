@@ -1,0 +1,23 @@
+# --- Dataset (MSD Task01_BrainTumour) — download separately, never commit ---
+Task01_BrainTumour/
+Task01_BrainTumour.tar
+*.tar
+*.nii
+*.nii.gz
+
+# --- Preprocessed cache (rebuilt by the notebook) ---
+cache_preprocessed/
+*.npy
+
+# --- Large files (> 50 MB) ---
+# git cannot ignore by size; files over 50 MB present at audit time are listed here.
+# Re-check before committing:  find . -path ./.git -prune -o -type f -size +50M -print
+# (Task01_BrainTumour.tar is already covered above.)
+
+# --- Python / Jupyter clutter ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# --- Local notebook backup (not part of the submission) ---
+medass2_backup.ipynb

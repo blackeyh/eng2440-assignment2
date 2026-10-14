@@ -1,0 +1,28 @@
+{
+  "sampler": "uniform",
+  "seed": 42,
+  "lr": 0.0003,
+  "batch_size": 4,
+  "iters_per_epoch": 20,
+  "epochs": 1,
+  "patch_size": [
+    64,
+    64,
+    64
+  ],
+  "epoch": [
+    1
+  ],
+  "train_loss": [
+    1.572425651550293
+  ],
+  "val_loss": [
+    1.4541036009788513
+  ],
+  "val_dice": [
+    0.404820273291212
+  ],
+  "sec_per_iter": [
+    0.05232881307601929
+  ]
+}

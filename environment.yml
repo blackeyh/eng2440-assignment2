@@ -1,0 +1,17 @@
+name: medass2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11.16
+  - numpy=2.4.6
+  - pandas=3.0.6
+  - scipy=1.17.1
+  - matplotlib=3.11.2
+  - nibabel=5.4.2
+  - jupyterlab=4.6.4
+  - ipykernel=7.4.0
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.11.0+cu128     # built against CUDA 12.8
+      - tabulate==0.10.0        # required by DataFrame.to_markdown() in the Section F cells
